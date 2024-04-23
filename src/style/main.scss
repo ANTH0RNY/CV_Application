@@ -1,0 +1,8 @@
+@use 'color-themes' as *;
+
+.app{
+  @include themed(){
+    color: t('text');
+    background:t('bg');
+  }
+}
