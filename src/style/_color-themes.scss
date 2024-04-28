@@ -1,8 +1,11 @@
 $bg--light:white;
-$text--light: blue;
+$text--light: black;
 $brand--blue--light: lightblue;
 $hover--light: lightblue;
 $border--light: gray;
+$bg--accordion--light: white;
+$title--accordion--light: #444;
+
 
 $bg--dark--top: black;
 $bg--dark--bottom: gray;
@@ -10,6 +13,8 @@ $text--2--dark: white;
 $brand--blue--dark: navy;
 $hover--dark: gray;
 $border--dark: white;
+$bg--accordion--dark: #444;
+$title--accordion--dark: #eee;
 
 
 $themes: (
@@ -18,14 +23,19 @@ $themes: (
                 text: $text--light,
                 link: $brand--blue--light,
                 hover: $hover--light,
-                border: $border--light
+                border: $border--light,
+                bg-accordion: $bg--accordion--light,
+                title-accordion: $title--accordion--light,
+
         ),
         dark: (
                 bg: linear-gradient($bg--dark--top, $bg--dark--bottom),
                 text: $text--2--dark,
                 link: $brand--blue--dark,
                 hover: $hover--dark,
-                border: $border--dark
+                border: $border--dark,
+                bg-accordion: $bg--accordion--dark,
+                title-accordion: $title--accordion--dark,
         ),
 );
 
