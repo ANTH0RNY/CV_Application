@@ -1,34 +1,10 @@
-import phone from '../assets/img/phone-svgrepo-com.svg'
-import email from "../assets/img/email-svgrepo-com.svg"
-import address from "../assets/img/address-location-map-svgrepo-com.svg"
 import "../style/cvDisplay.scss"
+import CvHeader from "./cv/cvHeader"
+import { cvProps } from "../myTypes"
 
 
-export default function CvDisplay() {
-  function CvHeader() {
-    return (
-      <div className="cv-header">
-        <div className="name-job-title">
-          <p className="name">Nelson Barker</p>
-          <p className="job-title cv-subheading">Junior Developer</p>
-        </div>
-        <div className="details">
-          <div className="phone-number">
-            <img src={phone} alt="Phone logo" />
-            <p>+254-012-4567-8910</p>
-          </div>
-          <div className="email">
-            <img src={email} alt="email" />
-            <p>nelson@example.com</p>
-          </div>
-          <div className="address">
-            <img src={address} alt="address" />
-            <p>Nairobi, Kenya</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
+export default function CvDisplay({data}: cvProps) {
+  
   function CvSummary() {
     return (
       <div className='cv-summary'>
@@ -69,7 +45,7 @@ export default function CvDisplay() {
 
   return (
     <div className="cv-display">
-      <CvHeader />
+      <CvHeader data={data} />
       <CvSummary />
       <CvSection />
     </div>

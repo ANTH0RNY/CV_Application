@@ -1,69 +1,52 @@
-import { ChangeEvent, useState } from "react"
-import Accordion from "./accordion"
-import '../style/form.scss'
+import { ChangeEvent, useState } from "react";
+import Accordion from "./accordion";
+import "../style/form.scss";
+import { buttonProps } from "../myTypes";
+import GeneralForm from "./form/generalForm";
 
+import { formProps } from "../myTypes";
 
-export default function Form() {
-
-function GeneralForm() {
-    return (
-      <div className="general-form a-form">
-        <label>
-          <p>Full Name</p>
-          <input type="text" placeholder="John Smith" className="name" />
-        </label>
-        <label>
-          <p>
-            Job Title
-          </p>
-          <input type="text"placeholder="Junior Developer"/>
-        </label>
-        <label>
-          <p>Email</p>
-          <input type="email" placeholder="JohnSmith@mail.com" />
-        </label>
-
-        <label>
-          <p>Phone Number</p>
-          <input type="tel" placeholder="+253 73i 447 5938" />
-        </label>
-
-        <label>
-          <p>Address</p>
-          <input type="text" placeholder="Nairobi, Kenya" />
-        </label>
-
-      </div>
-    )
-  }
+export default function Form({ data, handleFunction }: formProps) {
+  
 
   function ProfileForm() {
     return (
       <div className="profile-name a-form">
         <textarea placeholder="About yourself" />
       </div>
-    )
+    );
   }
 
   function DateForm() {
-    const currentDate = new Date()
-    currentDate.setDate(currentDate.getDate() + 3)
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 3);
 
-    const [date, setDate] = useState<Date>(currentDate)
-    const [date1, setDate1] = useState<Date>(currentDate)
+    const [date, setDate] = useState<Date>(currentDate);
+    const [date1, setDate1] = useState<Date>(currentDate);
     const onSetDate = (e: ChangeEvent<HTMLInputElement>): void => {
-      setDate(new Date(e.target.value))
-    }
+      setDate(new Date(e.target.value));
+    };
     const onSetDate1 = (e: ChangeEvent<HTMLInputElement>): void => {
-      setDate1(new Date(e.target.value))
-    }
+      setDate1(new Date(e.target.value));
+    };
     return (
       <div className="date-form">
-        <input type="date" id="date-from" placeholder="2024-04-28" value={date1.toLocaleDateString('en-CA')} onChange={onSetDate1} />
-        <input type="date" id="date-to" placeholder="2024-04-28" value={date.toLocaleDateString('en-CA')} onChange={onSetDate} />
-
+        <input
+          type="date"
+          id="date-from"
+          placeholder="2024-04-28"
+          value={date1.toLocaleDateString("en-CA")}
+          onChange={onSetDate1}
+        />
+        <input
+          type="date"
+          id="date-to"
+          placeholder="2024-04-28"
+          value={date.toLocaleDateString("en-CA")}
+          onChange={onSetDate}
+        />
       </div>
-    )
+    );
   }
 
   function EducationForm() {
@@ -86,26 +69,20 @@ function GeneralForm() {
           <input type="text" placeholder="Nairobi, Kenya" />
         </label>
         <label>
-          <p>
-            Description
-          </p>
+          <p>Description</p>
           <textarea placeholder="What you learned" />
         </label>
       </div>
-    )
+    );
   }
 
-  interface buttonProps {
-    title?: String,
-    classSelector?:String
-  }
+  // interface buttonProps {
+  //   title?: String,
+  //   classSelector?:String
+  // }
 
-  function MyButton({ title = "add", classSelector=''}: buttonProps) {
-    return (
-      <button className={"a-btn " + classSelector}>
-        {title}
-      </button>
-    )
+  function MyButton({ title = "add", classSelector = "" }: buttonProps) {
+    return <button className={"a-btn " + classSelector}>{title}</button>;
   }
 
   function ExperienceForm() {
@@ -132,20 +109,20 @@ function GeneralForm() {
           <input type="text" placeholder="Nairobi, Kenya" />
         </label>
       </div>
-    )
+    );
   }
 
   return (
     <div className="form">
-      <Accordion title={'Personal Information'}>
-        <GeneralForm />
+      <Accordion title={"Personal Information"}>
+        <GeneralForm data={data} handleFunction={handleFunction}/>
       </Accordion>
 
-      <Accordion title={'Your Profile'}>
+      <Accordion title={"Your Profile"}>
         <ProfileForm />
       </Accordion>
 
-      <Accordion title={'Education'}>
+      <Accordion title={"Education"}>
         <EducationForm />
         <MyButton title={"Add Education"} />
       </Accordion>
@@ -154,5 +131,5 @@ function GeneralForm() {
         <MyButton title={"Add Work Experience"} />
       </Accordion>
     </div>
-  )
+  );
 }

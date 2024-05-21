@@ -1,9 +1,10 @@
 interface personalInfoType {
-  name: String;
-  jobTitle: String;
-  email: String;
-  phoneNo: String;
-  address: String;
+  // name: string|number|undefined| readonly string[];
+  name: string
+  jobTitle: string;
+  email: string;
+  phoneNo: string;
+  address: string;
 }
 
 interface infoType {
@@ -19,4 +20,17 @@ interface durationType {
   from: Date;
 }
 
-export default { personalInfoType, infoType };
+interface buttonProps {
+  title?: String,
+  classSelector?:String
+}
+
+interface formProps {
+  data: personalInfoType;
+  handleFunction: Function;
+}
+
+interface cvProps{
+  data: personalInfoType
+}
+export { personalInfoType, infoType, buttonProps, formProps, cvProps};
