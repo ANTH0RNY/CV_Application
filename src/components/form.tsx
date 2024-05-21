@@ -9,10 +9,15 @@ function GeneralForm() {
     return (
       <div className="general-form a-form">
         <label>
-          <p>Full name</p>
+          <p>Full Name</p>
           <input type="text" placeholder="John Smith" className="name" />
         </label>
-
+        <label>
+          <p>
+            Job Title
+          </p>
+          <input type="text"placeholder="Junior Developer"/>
+        </label>
         <label>
           <p>Email</p>
           <input type="email" placeholder="JohnSmith@mail.com" />
@@ -79,6 +84,12 @@ function GeneralForm() {
         <label>
           <p>Location</p>
           <input type="text" placeholder="Nairobi, Kenya" />
+        </label>
+        <label>
+          <p>
+            Description
+          </p>
+          <textarea placeholder="What you learned" />
         </label>
       </div>
     )
