@@ -3,19 +3,14 @@ import Accordion from "./accordion";
 import "../style/form.scss";
 import { buttonProps } from "../myTypes";
 import GeneralForm from "./form/generalForm";
+import ProfileForm from "./form/profileForm";
 
 import { formProps } from "../myTypes";
 
-export default function Form({ data, handleFunction }: formProps) {
+export default function Form({ data, handleFunction , profileInfo, handleProfileInfo}: formProps) {
   
 
-  function ProfileForm() {
-    return (
-      <div className="profile-name a-form">
-        <textarea placeholder="About yourself" />
-      </div>
-    );
-  }
+
 
   function DateForm() {
     const currentDate = new Date();
@@ -119,7 +114,7 @@ export default function Form({ data, handleFunction }: formProps) {
       </Accordion>
 
       <Accordion title={"Your Profile"}>
-        <ProfileForm />
+        <ProfileForm profile={profileInfo} handleFunction={handleProfileInfo}/>
       </Accordion>
 
       <Accordion title={"Education"}>

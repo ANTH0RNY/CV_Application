@@ -1,6 +1,11 @@
-import { formProps } from "../../myTypes";
+// import { formProps } from "../../myTypes";
+import { personalInfoType } from "../../myTypes";
+interface myProps{
+  data: personalInfoType,
+  handleFunction: Function
+}
 
-export default function GeneralForm({data, handleFunction}: formProps) {
+export default function GeneralForm({data, handleFunction}: myProps) {
     return (
       <div className="general-form a-form">
         <label>

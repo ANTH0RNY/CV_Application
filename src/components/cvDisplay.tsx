@@ -1,18 +1,11 @@
 import "../style/cvDisplay.scss"
 import CvHeader from "./cv/cvHeader"
 import { cvProps } from "../myTypes"
+import CvSummary from "./cv/cvSummary"
 
-
-export default function CvDisplay({data}: cvProps) {
+export default function CvDisplay({data, profileInfo}: cvProps) {
   
-  function CvSummary() {
-    return (
-      <div className='cv-summary'>
-        <h2 className="cv-subheading">SUMMARY</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum voluptatum aperiam totam at iure recusandae, similique provident sed. Deleniti, esse autem explicabo quo odit dolores earum repellat exercitationem quisquam, officiis eum est dolorem, aperiam corporis commodi molestias distinctio eligendi nam. Voluptas, officiis odit laudantium ipsam assumenda ipsa dolorum explicabo nihil!</p>
-      </div>
-    )
-  }
+
 
   function CvItem() {
     return (
@@ -46,7 +39,7 @@ export default function CvDisplay({data}: cvProps) {
   return (
     <div className="cv-display">
       <CvHeader data={data} />
-      <CvSummary />
+      <CvSummary profile={profileInfo}/>
       <CvSection />
     </div>
   )

@@ -28,9 +28,12 @@ interface buttonProps {
 interface formProps {
   data: personalInfoType;
   handleFunction: Function;
+  profileInfo: string,
+  handleProfileInfo: Function
 }
 
 interface cvProps{
-  data: personalInfoType
+  data: personalInfoType,
+  profileInfo: string,
 }
 export { personalInfoType, infoType, buttonProps, formProps, cvProps};
