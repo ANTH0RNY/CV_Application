@@ -8,10 +8,11 @@ interface personalInfoType {
 }
 
 interface infoType {
-  institution: String;
-  title: String;
-  location: String;
-  description: String;
+  id: readonly string,
+  institution: string;
+  title: string;
+  location: string;
+  description: string;
   duration: durationType;
 }
 
@@ -29,11 +30,14 @@ interface formProps {
   data: personalInfoType;
   handleFunction: Function;
   profileInfo: string,
-  handleProfileInfo: Function
+  handleProfileInfo: Function,
+  educationInfoList: infoType[],
+  handleEducationInfoList: Function
+  appendList: Fuction
 }
 
 interface cvProps{
   data: personalInfoType,
   profileInfo: string,
 }
-export { personalInfoType, infoType, buttonProps, formProps, cvProps};
+export { personalInfoType, infoType, buttonProps, formProps, cvProps, durationType};

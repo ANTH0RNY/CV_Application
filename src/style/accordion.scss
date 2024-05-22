@@ -3,9 +3,9 @@
   width: 100%;
 }
 .accordion-panel{
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  // max-height: 0;
+  // overflow: hidden;
+  transition: all 0.2s ease-out;
   @include themed(){
     color: t('text');
     background-color: t('bg');
