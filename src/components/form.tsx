@@ -15,15 +15,24 @@ export default function Form({
   handleProfileInfo,
   educationInfoList,
   handleEducationInfoList,
-  appendList
+  appendList,
+  experienceInfoList,
+  handleExperienceChange,
 }: formProps) {
   // interface buttonProps {
   //   title?: String,
   //   classSelector?:String
   // }
 
-  function MyButton({ title = "add", classSelector = "" }: buttonProps) {
-    return <button className={"a-btn " + classSelector} onClick={(_)=> appendList('education')}>{title}</button>;
+  function MyButton({ title = "add", classSelector = "", list="education"}: buttonProps) {
+    return (
+      <button
+        className={"a-btn " + classSelector}
+        onClick={(_) => appendList(list)}
+      >
+        {title}
+      </button>
+    );
   }
 
   return (
@@ -37,12 +46,20 @@ export default function Form({
       </Accordion>
 
       <Accordion title={"Education"}>
-      {educationInfoList.map((item)=> <EducationForm data={item} handler={handleEducationInfoList} key={item.id}/>)}
+        {educationInfoList.map((item) => (
+          <EducationForm
+            data={item}
+            handler={handleEducationInfoList}
+            key={item.id}
+          />
+        ))}
         <MyButton title={"Add Education"} />
       </Accordion>
       <Accordion title={"Work Experience"}>
-        {/* <ExperienceForm /> */}
-        <MyButton title={"Add Work Experience"} />
+        {experienceInfoList.map((item) => (
+          <ExperienceForm data={item} handler={handleExperienceChange} key={item.id} />
+        ))}
+        <MyButton title={"Add Work Experience"} list="experience"/>
       </Accordion>
       {/* <details>
         <summary>

@@ -24,6 +24,7 @@ interface durationType {
 interface buttonProps {
   title?: String,
   classSelector?:String
+  list?:lists
 }
 
 interface formProps {
@@ -33,11 +34,16 @@ interface formProps {
   handleProfileInfo: Function,
   educationInfoList: infoType[],
   handleEducationInfoList: Function
-  appendList: Fuction
+  appendList: Fuction,
+  experienceInfoList: infoType[],
+  handleExperienceChange: Function
 }
 
 interface cvProps{
   data: personalInfoType,
   profileInfo: string,
 }
-export { personalInfoType, infoType, buttonProps, formProps, cvProps, durationType};
+
+type lists = 'education'| 'experience'
+
+export { personalInfoType, infoType, buttonProps, formProps, cvProps, durationType, lists};

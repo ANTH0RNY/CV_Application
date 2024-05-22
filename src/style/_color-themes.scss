@@ -19,22 +19,26 @@ $title--accordion--dark: #eee;
 
 $themes: (
         default: (
-                bg: $bg--light,
+                // bg: $bg--light,
+                bg: transparent,
                 text: $text--light,
                 link: $brand--blue--light,
                 hover: $hover--light,
                 border: $border--light,
-                bg-accordion: $bg--accordion--light,
+                // bg-accordion: $bg--accordion--light,
+                bg-accordion: transparent,
                 title-accordion: $title--accordion--light,
 
         ),
         dark: (
-                bg: linear-gradient($bg--dark--top, $bg--dark--bottom),
+                // bg: linear-gradient($bg--dark--top, $bg--dark--bottom),
+                bg: transparent,
                 text: $text--2--dark,
                 link: $brand--blue--dark,
                 hover: $hover--dark,
                 border: $border--dark,
-                bg-accordion: $bg--accordion--dark,
+                // bg-accordion: $bg--accordion--dark,
+                bg-accordion: transparent,
                 title-accordion: $title--accordion--dark,
         ),
 );

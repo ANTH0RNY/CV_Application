@@ -1,25 +1,81 @@
 @use 'color-themes' as *;
-.accordion{
+
+.accordion {
   width: 100%;
+  position: relative;
+  transition: max-height 500ms ease-out;
+  border-radius: 0.5rem;
+  max-height: 20rem;
+
+  &[open] {
+    padding-bottom: 1em;
+    max-height: 100%;
+  }
 }
-.accordion-panel{
+
+.accordion-panel {
+
   // max-height: 0;
   // overflow: hidden;
-  transition: all 0.2s ease-out;
-  @include themed(){
+  transition: 500ms;
+  @include themed() {
     color: t('text');
     background-color: t('bg');
   }
 }
-.accordion-button{
- @include themed(){
+
+.accordion-button {
+  @include themed() {
     color: t('title-accordion');
     background-color: t('bg-accordion')
   }
-  transition: 0.4s;
+
+  &::marker {
+    color: gray;
+    background-color: gray;
+  }
+
+  &::before,
+  &::after {
+    transition: 200ms;
+  }
 }
 
-.active, .accordion-button:hover{
+@layer markers {
+  .accordion-button {
+    position: relative;
+
+    &::marker {
+      content: none;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: .75em;
+      height: 0;
+      border-bottom: 2px solid;
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 0;
+      transform: translateY(-50%);
+      margin-right: 1rem;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+    }
+
+    [open] &::after {
+      transform: rotate(0deg);
+    }
+
+  }
+}
+
+.active,
+.accordion-button:hover {
   // background-color: #eee;
   cursor: pointer;
 }
