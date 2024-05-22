@@ -42,6 +42,8 @@ interface formProps {
 interface cvProps{
   data: personalInfoType,
   profileInfo: string,
+  educationInfo: infoType[],
+  experienceInfo: infoType[]
 }
 
 type lists = 'education'| 'experience'

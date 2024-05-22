@@ -96,7 +96,7 @@ export default function Main() {
     }
     // if (typeof value === "string" && key !== 'duration'){
     const items: educationInfoListType = [];
-    for (let i of educationInfoList) {
+    for (let i of experienceInfoList) {
       if (i.id === id) {
         const info = { ...i };
         if (key !== "duration" && typeof value === "string") {
@@ -157,7 +157,7 @@ export default function Main() {
         experienceInfoList={experienceInfoList}
         handleExperienceChange={handleExerienceChange}
       />
-      <CvDisplay data={personalInfo} profileInfo={profileInfo} />
+      <CvDisplay data={personalInfo} profileInfo={profileInfo} educationInfo={educationInfoList} experienceInfo={experienceInfoList}/>
     </div>
   );
 }
