@@ -43,7 +43,7 @@ interface cvProps{
   data: personalInfoType,
   profileInfo: string,
   educationInfo: infoType[],
-  experienceInfo: infoType[]
+  experienceInfo: infoType[],
 }
 
 type lists = 'education'| 'experience'

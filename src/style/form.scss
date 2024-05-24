@@ -1,9 +1,6 @@
 .form{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  // min-height: 100%;
-  // align-items: center;
 &>.accordion{
     // border: 1px solid black;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -25,6 +22,9 @@
       // justify-content: center;
       align-content: center;
       .a-btn{
+        &:last-child{
+          margin-top: 1rem;
+        }
         width: max-content;
         align-self: center;
         font-size: 18px;
@@ -32,6 +32,8 @@
         padding: .5rem 1rem;
         border-radius: .5rem;
         border: 1px solid transparent;
+        background-color: lightblue;
+        font-weight: bold;
         // outline: none;
         &:hover{
           cursor: pointer;
@@ -45,7 +47,15 @@
     padding-inline: 1rem;
     display: flex;
     flex-direction:column;
-    margin-bottom: 1rem;
+    margin: 1rem .5rem;
+    // border: 1px black solid;
+    // border-radius: 2rem;
+    // opacity: 1;
+    padding-block: 1rem;
+    // background: rgba(0,0,0, .02);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   label{
       width:100%;
       margin-block: 1rem;
@@ -75,7 +85,8 @@
       }
     }
     &>textarea, label>textarea{
-      min-height: 7.5rem;
+      min-height: 280px;
+      // min-width: 370px;
       padding-inline: .5rem;
       font-size: 18px;
       border-radius: .25rem;

@@ -6,14 +6,22 @@
   box-sizing: border-box;
   // border: solid .5px black;
 }
-.root{
-  // padding-inline: 2rem;
-  // padding-block: 1rem;
+.wrapper{
+  display: flex;
+  gap: 1rem;
 }
+.menu{
+  flex: 1;
+}
+// .root{
+//   // padding-inline: 2rem;
+//   // padding-block: 1rem;
+// }
 .main{
+  flex: 15;
   @include themed(){
     color: t('text');
-    background: transparent;
+    // background: t('bg-doodle');
   }
   padding: 2rem 1rem;
   // width: 100%;
@@ -33,7 +41,8 @@
   position:fixed;
   z-index: -1;
   border:none;
+  background-color: black;
   @include themed(){
-    background-color: t('bg');
+    background: t('bg-doodle');
   }
 }

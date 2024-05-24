@@ -1,11 +1,14 @@
-$bg--light:white;
+$bg--light: white;
 $text--light: black;
 $brand--blue--light: lightblue;
 $hover--light: lightblue;
 $border--light: gray;
 $bg--accordion--light: white;
 $title--accordion--light: #444;
-
+$cv--bg--light: rgba(255,255,255,.7);
+$cv--opacity--light: 1;
+$menu--filter--light: invert(.3);
+$menu--hover--light: invert(0);
 
 $bg--dark--top: black;
 $bg--dark--bottom: gray;
@@ -15,12 +18,19 @@ $hover--dark: gray;
 $border--dark: white;
 $bg--accordion--dark: #444;
 $title--accordion--dark: #eee;
+$cv--bg--dark: white;
+$cv--opacity--dark: .7;
+$menu--filter--dark: invert(.8);
+$menu--hover--dark: invert(1);
 
 
 $themes: (
         default: (
                 // bg: $bg--light,
+                cv-opacity: $cv--opacity--light,
                 bg: transparent,
+                bg-cv: $cv--bg--light,
+                bg-doodle: $bg--light,
                 text: $text--light,
                 link: $brand--blue--light,
                 hover: $hover--light,
@@ -28,11 +38,14 @@ $themes: (
                 // bg-accordion: $bg--accordion--light,
                 bg-accordion: transparent,
                 title-accordion: $title--accordion--light,
-
+                filter-menu: $menu--filter--light,
+                hover-menu: $menu--hover--light,
         ),
         dark: (
-                // bg: linear-gradient($bg--dark--top, $bg--dark--bottom),
+                cv-opacity: $cv--opacity--dark,
+                bg-doodle: linear-gradient($bg--dark--top, $bg--dark--bottom),
                 bg: transparent,
+                bg-cv: $cv--bg--dark,
                 text: $text--2--dark,
                 link: $brand--blue--dark,
                 hover: $hover--dark,
@@ -40,6 +53,8 @@ $themes: (
                 // bg-accordion: $bg--accordion--dark,
                 bg-accordion: transparent,
                 title-accordion: $title--accordion--dark,
+                filter-menu: $menu--filter--dark,
+                hover-menu: $menu--hover--dark,
         ),
 );
 

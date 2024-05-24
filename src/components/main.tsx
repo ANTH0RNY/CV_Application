@@ -3,12 +3,17 @@ import CvDisplay from "./cvDisplay";
 import { useState } from "react";
 import { personalInfoType, infoType, durationType, lists } from "../myTypes";
 import { v4 as uuidv4 } from "uuid";
+import Menu from "./menu";
 
 type personalKeys = keyof personalInfoType;
 type educationInfoListType = infoType[];
 type educationKeys = keyof infoType;
+type mainProps = {
+  isDark: Boolean;
+  setIsDark: Function;
+};
 
-export default function Main() {
+export default function Main({ isDark, setIsDark }: mainProps) {
   const [personalInfo, setPersonalInfo] = useState<personalInfoType>({
     name: "John Doe",
     jobTitle: "Junior Developer",
@@ -50,6 +55,8 @@ export default function Main() {
         },
       },
     ]);
+
+ 
   function handlePersonalInfoChange(key: personalKeys, value: string) {
     const info = { ...personalInfo };
     info[key] = value;
@@ -145,19 +152,27 @@ export default function Main() {
   }
 
   return (
-    <div className="main">
-      <Form
-        data={personalInfo}
-        handleFunction={handlePersonalInfoChange}
-        profileInfo={profileInfo}
-        handleProfileInfo={setProfileInfo}
-        educationInfoList={educationInfoList}
-        handleEducationInfoList={handleEducationInfoChange}
-        appendList={appendList}
-        experienceInfoList={experienceInfoList}
-        handleExperienceChange={handleExerienceChange}
-      />
-      <CvDisplay data={personalInfo} profileInfo={profileInfo} educationInfo={educationInfoList} experienceInfo={experienceInfoList}/>
+    <div className="wrapper">
+      <Menu isDark={isDark} setIsDark={setIsDark} />
+      <div className="main">
+        <Form
+          data={personalInfo}
+          handleFunction={handlePersonalInfoChange}
+          profileInfo={profileInfo}
+          handleProfileInfo={setProfileInfo}
+          educationInfoList={educationInfoList}
+          handleEducationInfoList={handleEducationInfoChange}
+          appendList={appendList}
+          experienceInfoList={experienceInfoList}
+          handleExperienceChange={handleExerienceChange}
+        />
+        <CvDisplay
+          data={personalInfo}
+          profileInfo={profileInfo}
+          educationInfo={educationInfoList}
+          experienceInfo={experienceInfoList}
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,33 @@
+@use 'color-themes' as *;
+.menu{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    .container{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        gap: 1.5rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 2rem .6rem;
+        border-radius: 2rem;
+
+        &>img{
+            @include themed(){
+                filter: t('filter-menu');
+            }
+            // filter: invert(.3);
+            width: 3rem;
+            // opacity: .8;
+            &:hover{
+                // opacity: 1;
+                // filter: invert(0);
+                @include themed(){
+                    filter: t('hover-menu');
+                }
+                cursor: pointer;
+            }
+        }
+        
+    }
+}

@@ -1,30 +1,46 @@
+@use "color-themes" as *;
+
 .cv-subheading{
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2em;
   // color: orange;
   color: darkblue;
   text-transform: capitalize;
 }
 
 .cv-display{
+  @include themed(){
+    background: t('bg-cv');
+    opacity: t('cv-opacity');
+  }
+  // opacity: .7;
+  // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: black;
+  aspect-ratio: 1/1.4;
+  // border: 1px solid black;
+  width: 210px;
+  padding: 2em;
+  font-size: 12pt;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2em;
+  // background-color: white;
   // justify-content: space-between;
   // align-content: center;
   .cv-header{
-    // margin-bottom: 1rem;
+    // margin-bottom: 1em;
     .name-job-title{
-      padding-bottom: 1rem;
+      padding-bottom: 1em;
       .name{
-        font-size: 3rem;
+        font-size: 3em;
         font-weight: 900;
         color: darkblue;
         text-transform: capitalize;
       }
       .job-title{
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 2em;
         color: orange;
         text-transform: capitalize;
       }
@@ -33,9 +49,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      // padding-inline: 1rem;
+      // padding-inline: 1em;
       img{
-        width: 1.5rem;
+        width: 1.5em;
       }
       &>div{
         &:hover{
@@ -44,7 +60,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: .25rem;
+        gap: .25em;
         &>p{
           font-size: large;
         }
@@ -54,29 +70,29 @@
   .cv-summary{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .5em;
     // h2{
       // color: orange;
-      // font-size: 2rem;
+      // font-size: 2em;
       // font-weight: bold;
     // }
     p{
       font-size: large;
-      color: #555555;
+      // color: #555555;
     }
   }
   .cv-education{
     .cv-education-item{
-      // margin-bottom: 1rem;
-      padding-block: .5rem;
+      // margin-bottom: 1em;
+      padding-block: .5em;
       list-style: none;
       display: flex;
       align-items: center;
       .period{
         display: flex;
         flex-direction: column;
-        gap: .5rem;
-        // width: 10rem;
+        gap: .5em;
+        // width: 10em;
         flex: 4;
         .date{
           color: darkblue;
@@ -84,7 +100,7 @@
           font-weight: 600;
         }
         .address{
-          color: #555555;
+          // color: #555555;
           font-weight: 400;
         }
       }
@@ -93,11 +109,11 @@
       }
       .description{
         border-left: 2px solid gray;
-        padding-left: .5rem;
+        padding-left: .5em;
         flex: 25;
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: .5em;
         justify-content: center;
         .title{
           color: darkblue;
@@ -110,7 +126,7 @@
           font-size: 18px;
         }
         .details{
-          color: #555555;
+          // color: #555555;
           font-size: large;
         }
       }
